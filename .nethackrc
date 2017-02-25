@@ -1,0 +1,27 @@
+OPTIONS=color
+OPTIONS=boulder:0
+OPTIONS=pickup_types:$?!=
+OPTIONS=!rest_on_space
+OPTIONS=symset:DECgraphics
+OPTIONS=hilite_pet
+OPTIONS=fruit:Buffalo Wing
+OPTIONS=msg_window:f
+OPTIONS=time
+OPTIONS=showexp
+
+OPTIONS=menucolors
+MENUCOLOR=" blessed "=green
+MENUCOLOR=" holy "=green
+MENUCOLOR=" cursed "=red
+MENUCOLOR=" unholy "=red
+MENUCOLOR=" cursed .* (being worn)"=orange&underline
+
+# displacing pets. hide the message.
+MSGTYPE=hide "You swap places with your .*"
+# delayed instadeaths. always prompt for -more-
+MSGTYPE=stop "You are slowing down."
+MSGTYPE=stop "You find it hard to breathe."
+MSGTYPE=stop "You are turning a little .*"
+# moving up or down stairs
+MSGTYPE=hide "You descend .*"
+MSGTYPE=hide "You (climb|fly) (up|down) .*"
