@@ -15,7 +15,4 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export HOMEBREW_GITHUB_API_TOKEN=8dd0bebc481ecbfc544822ea06558e40b2dd80bb
 
 # JAVA
-[[ -x /usr/libexec/java_home ]] && export JAVA_HOME=$(/usr/libexec/java_home)
-
-# personal bin
-[[ -d $HOME/.bin ]] && export PATH=$HOME/.bin:$PATH
+# [[ -x /usr/libexec/java_home ]] && export JAVA_HOME=$(/usr/libexec/java_home)
