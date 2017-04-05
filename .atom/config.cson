@@ -1,0 +1,29 @@
+"*":
+  core:
+    disabledPackages: [
+      "wrap-guide"
+    ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      "__pycache__"
+      "*.pyc"
+    ]
+    projectHome: "/Users/chase/code"
+    telemetryConsent: "limited"
+  editor:
+    showInvisibles: true
+  "exception-reporting":
+    userId: "3bc0eb41-211c-4607-b787-6315fe14a76f"
+  "tree-view":
+    hideIgnoredNames: true
+  welcome:
+    showOnStartup: false
+".go.source":
+  editor:
+    tabLength: 4
