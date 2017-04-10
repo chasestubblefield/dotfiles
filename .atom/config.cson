@@ -16,6 +16,10 @@
     ]
     projectHome: "/Users/chase/code"
     telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "smyck"
+    ]
   editor:
     showInvisibles: true
   "exception-reporting":
