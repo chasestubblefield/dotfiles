@@ -2,6 +2,7 @@
   core:
     disabledPackages: [
       "wrap-guide"
+      "spell-check"
     ]
     ignoredNames: [
       ".git"
