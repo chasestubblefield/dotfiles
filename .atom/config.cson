@@ -19,7 +19,7 @@
     restorePreviousWindowsOnStart: "no"
     telemetryConsent: "limited"
     themes: [
-      "one-dark-ui"
+      "pristine-ui"
       "smyck"
     ]
   editor:
@@ -27,6 +27,8 @@
     fontSize: 18
   "exception-reporting":
     userId: "3bc0eb41-211c-4607-b787-6315fe14a76f"
+  "pristine-ui":
+    hideDockButtons: true
   "tree-view":
     hideIgnoredNames: true
   welcome:
