@@ -1,5 +1,5 @@
 # Minimal prompt
-export PS1="\W \[\033[1;32m\]$ \[\033[0m\]"
+export PS1="\[\033[1;36m\]\W \[\033[1;32m\]$ \[\033[0m\]"
 
 # PATH
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
