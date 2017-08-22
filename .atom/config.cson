@@ -25,12 +25,14 @@
   editor:
     fontFamily: "Inconsolata-dz"
     fontSize: 18
+    showInvisibles: true
   "exception-reporting":
     userId: "3bc0eb41-211c-4607-b787-6315fe14a76f"
   "pristine-ui":
     hideDockButtons: true
   "tree-view":
     hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
 ".go.source":
