@@ -20,7 +20,7 @@ function __set_prompt() {
   local reset='\[\e[0m\]'
   local pre="$bold_cyan\W$reset"
   local post="$bold_green\$$reset "
-  if declare -fF __git_ps1 >/dev/null; then
+  if declare -F __git_ps1 >/dev/null; then
     GIT_PS1_SHOWDIRTYSTATE=1
     GIT_PS1_SHOWUNTRACKEDFILES=1
     GIT_PS1_SHOWUPSTREAM=auto
