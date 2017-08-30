@@ -12,6 +12,7 @@ hash pyenv-virtualenv-init 2>/dev/null && eval "$(pyenv virtualenv-init -)"
 export PATH
 
 alias gst='git status --short --branch'
+alias be='bundle exec'
 
 function __set_prompt() {
   local bold_cyan='\[\e[1;36m\]'
