@@ -16,23 +16,19 @@
       "*.pyc"
     ]
     projectHome: "/Users/chase/projects"
-    restorePreviousWindowsOnStart: "no"
     telemetryConsent: "limited"
-    themes: [
-      "pristine-ui"
-      "smyck"
-    ]
   editor:
     fontFamily: "Inconsolata-dz"
     fontSize: 18
     showInvisibles: true
   "exception-reporting":
     userId: "3bc0eb41-211c-4607-b787-6315fe14a76f"
-  "pristine-ui":
+  "one-dark-ui":
     hideDockButtons: true
   "tree-view":
     hideIgnoredNames: true
     hideVcsIgnoredFiles: true
+    squashDirectoryNames: true
   welcome:
     showOnStartup: false
 ".go.source":
