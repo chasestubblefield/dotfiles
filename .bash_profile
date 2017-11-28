@@ -14,6 +14,8 @@ export PATH
 alias gst='git status --short --branch'
 alias be='bundle exec'
 
+export LESSHISTFILE=/dev/null
+
 function __set_prompt() {
   local bold_cyan='\[\e[1;36m\]'
   local bold_green='\[\e[1;32m\]'
