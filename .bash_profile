@@ -4,8 +4,8 @@
 [ -d /usr/local/etc/bash_completion.d ] && for f in /usr/local/etc/bash_completion.d/*; do source $f; done
 
 hash rbenv 2>/dev/null && eval "$(rbenv init -)"
-hash pyenv 2>/dev/null && eval "$(pyenv init -)"
-hash pyenv-virtualenv-init 2>/dev/null && eval "$(pyenv virtualenv-init -)"
+#hash pyenv 2>/dev/null && eval "$(pyenv init -)"
+#hash pyenv-virtualenv-init 2>/dev/null && eval "$(pyenv virtualenv-init -)"
 
 [ -d "$HOME/.cargo/bin" ] && PATH="$HOME/.cargo/bin:$PATH"
 [ -d "$HOME/projects/gopath" ] && export GOPATH="$HOME/projects/gopath" && PATH="$GOPATH/bin:$PATH"
