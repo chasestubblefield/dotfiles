@@ -15,7 +15,7 @@
       "__pycache__"
       "*.pyc"
     ]
-    projectHome: "/Users/chase/projects"
+    projectHome: "/Users/chase/code"
     telemetryConsent: "limited"
   editor:
     fontFamily: "Inconsolata-dz"

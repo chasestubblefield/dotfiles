@@ -8,7 +8,7 @@ hash rbenv 2>/dev/null && eval "$(rbenv init -)"
 #hash pyenv-virtualenv-init 2>/dev/null && eval "$(pyenv virtualenv-init -)"
 
 [ -d "$HOME/.cargo/bin" ] && PATH="$HOME/.cargo/bin:$PATH"
-[ -d "$HOME/projects/gopath" ] && export GOPATH="$HOME/projects/gopath" && PATH="$GOPATH/bin:$PATH"
+[ -d "$HOME/code/gopath" ] && export GOPATH="$HOME/code/gopath" && PATH="$GOPATH/bin:$PATH"
 export PATH
 
 alias gst='git status --short --branch'
