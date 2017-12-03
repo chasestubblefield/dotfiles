@@ -1,6 +1,8 @@
 # .bash_profile
 # Run when bash is invoked as an interactive login shell
 
+shopt -s extglob
+
 [ -d /usr/local/etc/bash_completion.d ] && for f in /usr/local/etc/bash_completion.d/*; do source $f; done
 
 hash rbenv 2>/dev/null && eval "$(rbenv init -)"
