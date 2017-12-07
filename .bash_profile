@@ -22,6 +22,9 @@ export CLICOLOR=1
 # disable less history
 export LESSHISTFILE=-
 
+# needing for encrypting with gpg
+export GPG_TTY=$(tty)
+
 function __set_prompt() {
   local bold_cyan='\[\e[1;36m\]'
   local bold_green='\[\e[1;32m\]'
