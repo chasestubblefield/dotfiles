@@ -3,6 +3,8 @@
     disabledPackages: [
       "wrap-guide"
       "spell-check"
+      "ide-typescript"
+      "language-babel"
     ]
     ignoredNames: [
       ".git"
@@ -23,11 +25,16 @@
     showInvisibles: true
   "exception-reporting":
     userId: "3bc0eb41-211c-4607-b787-6315fe14a76f"
+  "find-and-replace":
+    scrollToResultOnLiveSearch: true
+  "fuzzy-finder":
+    ignoredNames: [
+      "node_modules"
+    ]
   "one-dark-ui":
     hideDockButtons: true
   "tree-view":
     hideIgnoredNames: true
-    hideVcsIgnoredFiles: true
     squashDirectoryNames: true
   welcome:
     showOnStartup: false
