@@ -3,15 +3,13 @@
 
 shopt -s extglob
 
-[ -d /usr/local/etc/bash_completion.d ] && for f in /usr/local/etc/bash_completion.d/*; do source $f; done
+[ -d /usr/local/etc/bash_completion.d ] && for f in /usr/local/etc/bash_completion.d/*; do source "$f"; done
 
 hash rbenv 2>/dev/null && eval "$(rbenv init -)"
-#hash pyenv 2>/dev/null && eval "$(pyenv init -)"
-#hash pyenv-virtualenv-init 2>/dev/null && eval "$(pyenv virtualenv-init -)"
-
-[ -d "$HOME/.cargo/bin" ] && PATH="$HOME/.cargo/bin:$PATH"
-[ -d "$HOME/code/gopath" ] && export GOPATH="$HOME/code/gopath" && PATH="$GOPATH/bin:$PATH"
-export PATH
+hash pyenv 2>/dev/null && eval "$(pyenv init -)"
+hash pyenv-virtualenv-init 2>/dev/null && eval "$(pyenv virtualenv-init -)"
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+[ -d "$HOME/code/gopath" ] && export GOPATH="$HOME/code/gopath" && export PATH="$GOPATH/bin:$PATH"
 
 alias gst='git status --short --branch'
 alias be='bundle exec'
@@ -25,7 +23,7 @@ export LESSHISTFILE=-
 # needing for encrypting with gpg
 export GPG_TTY=$(tty)
 
-function __set_prompt() {
+__set_prompt() {
   local bold_cyan='\[\e[1;36m\]'
   local bold_green='\[\e[1;32m\]'
   local reset='\[\e[0m\]'
