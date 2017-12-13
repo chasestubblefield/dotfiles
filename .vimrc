@@ -1,30 +1,23 @@
 " .vimrc
 
-set nocompatible                  " no vi compatibility
+set nocompatible
 
-syntax on                         " enable syntax highlighting
-filetype plugin indent on         " filetype detection, plugins and indent on
+filetype plugin indent on
 
 set autoindent
-set tabstop=2                     " set indent to 2 spaces
+set tabstop=2
 set shiftwidth=2
-set expandtab                     " use spaces, not tabs
-
-set number                        " show line numbers
-set cursorline                    " highlight current line
-
-set laststatus=2                  " always show status line
-set showcmd                       " show incomplete commands on status line
-set ruler                         " show line and col on status line
-
-" using backspace like this is an anti-pattern
-"set backspace=indent,eol,start    " allow backspace over everything
-
-set ttimeoutlen=100               " decrease timeout for key codes
-
+set expandtab
+set laststatus=2
+set showcmd
+set ruler
+set number
+set ttimeoutlen=100
 set wildmenu
 
-silent! colorscheme jellybeans
+" color
+syntax enable
+silent! colorscheme smyck
 
 let mapleader = ","
 
@@ -42,6 +35,9 @@ map <leader><s-tab> :bprevious<cr>
 
 " show invisibles
 map <leader>l :set list!<cr>
+
+" highlight current line
+map <leader>L :set cursorline!<cr>
 
 " rename current file, via Gary Bernhardt
 function! RenameFile()
