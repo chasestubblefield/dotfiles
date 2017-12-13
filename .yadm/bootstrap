@@ -1,25 +1,31 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 cd "$HOME"
-
-echo "Add GitHub credentials to keychain"
-if ! security find-internet-password -a chasetopher -r htps -s github.com >/dev/null 2>&1; then
-  security add-internet-password -a chasetopher -r htps -s github.com -T /Library/Developer/CommandLineTools/usr/libexec/git-core/git-credential-osxkeychain -w
-  security set-internet-password-partition-list -a chasetopher -r htps -s github.com -S apple:
-fi
-if ! security find-internet-password -a chasetopher -r htps -s gist.github.com >/dev/null 2>&1; then
-  security add-internet-password -a chasetopher -r htps -s gist.github.com -T /Library/Developer/CommandLineTools/usr/libexec/git-core/git-credential-osxkeychain -w
-  security set-internet-password-partition-list -a chasetopher -r htps -s gist.github.com -S apple:
-fi
 
 echo "Init submodules"
 yadm submodule update --init --recursive
 
 echo "Install from global Brewfile"
-brew bundle --global
+brew bundle check --global || brew bundle install --global
+
+echo "Add GitHub credentials to keychain"
+ALLOWED_APPS="-T /Library/Developer/CommandLineTools/usr/libexec/git-core/git-credential-osxkeychain"
+if brew ls --versions git >/dev/null 2>&1; then
+  cd $(brew --prefix git)
+  ALLOWED_APPS="-T $(pwd -P)/bin/git-credential-osxkeychain $ALLOWED_APPS"
+  cd - >/dev/null
+fi
+if ! security find-internet-password -a chasetopher -r htps -s github.com >/dev/null 2>&1; then
+  security add-internet-password -a chasetopher -r htps -s github.com $ALLOWED_APPS -w
+  security set-internet-password-partition-list -a chasetopher -r htps -s github.com -S apple:,unsigned:
+fi
+if ! security find-internet-password -a chasetopher -r htps -s gist.github.com >/dev/null 2>&1; then
+  security add-internet-password -a chasetopher -r htps -s gist.github.com $ALLOWED_APPS -w
+  security set-internet-password-partition-list -a chasetopher -r htps -s gist.github.com -S apple:,unsigned:
+fi
+
+echo "Decrypt secret dotfiles"
+yadm decrypt
 
 echo "Set macOS defaults"
 bash .macos_defaults
-
-echo "Decrypting secret dotfiles"
-yadm decrypt
