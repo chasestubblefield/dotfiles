@@ -12,6 +12,9 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 # Play feedback when volume changed
 defaults write -g com.apple.sound.beep.feedback -int 1
 
+# Less animation when switching between fullscreen apps
+defaults write com.apple.universalaccess reduceMotion -bool YES
+
 # Auto-hide dock
 defaults write com.apple.dock autohide -bool YES
 
