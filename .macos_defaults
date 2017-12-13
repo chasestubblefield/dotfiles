@@ -1,0 +1,91 @@
+set -x
+
+# Secondary click
+defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode TwoButton
+
+# One-finger swipe between pages
+defaults write -g AppleEnableMouseSwipeNavigateWithScrolls -bool YES
+
+# Tap to click
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool YES
+
+# Play feedback when volume changed
+defaults write -g com.apple.sound.beep.feedback -int 1
+
+# Auto-hide dock
+defaults write com.apple.dock autohide -bool YES
+
+# No persistent items in dock
+defaults write com.apple.dock persistent-apps -array
+defaults write com.apple.dock persistent-others -array
+
+killall Dock
+
+# Show day and date in menu bar
+defaults write com.apple.menuextra.clock DateFormat "EEE MMM d  h:mm a"
+
+# Menu bar items
+defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.airport" -bool YES
+defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.battery" -bool YES
+defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.clock" -bool YES
+defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.volume" -bool YES
+defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/Clock.menu" "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/Volume.menu" "/System/Library/CoreServices/Menu Extras/AirPort.menu" 
+
+killall SystemUIServer
+
+# Show nothing on Desktop
+defaults write com.apple.Finder ShowHardDrivesOnDesktop -bool NO
+defaults write com.apple.Finder ShowExternalHardDrivesOnDesktop -bool NO
+defaults write com.apple.Finder ShowRemovableMediaOnDesktop -bool NO
+defaults write com.apple.Finder ShowMountedServersOnDesktop -bool NO
+
+# New Finder windows open in Home
+defaults write com.apple.Finder NewWindowTarget PfHm
+defaults write com.apple.Finder NewWindowTargetPath "file://$HOME/"
+
+# Search current folder
+defaults write com.apple.Finder FXDefaultSearchScope SCcf
+
+# Minimal Finder window appearence
+defaults write com.apple.Finder ShowPreviewPane -bool NO
+defaults write com.apple.Finder ShowSidebar -bool NO
+defaults write com.apple.Finder ShowStatusBar -bool NO
+
+# Don't show tags in sidebar
+defaults write com.apple.Finder ShowRecentTags -bool NO
+
+# Disable line marks
+defaults write com.apple.Terminal ShowLineMarks -bool NO
+
+killall Finder
+
+# Required to disable "Developer" results in Spotlight (bug)
+[ ! -f /Applications/Xcode.app ] && touch /Applications/Xcode.app
+
+# Only Applications and System Prefs in Spotlight
+defaults write com.apple.spotlight orderedItems -array \
+	'{"enabled" = 1;"name" = "APPLICATIONS";}' \
+	'{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}' \
+	'{"enabled" = 0;"name" = "MENU_CONVERSION";}' \
+	'{"enabled" = 0;"name" = "MENU_EXPRESSION";}' \
+	'{"enabled" = 0;"name" = "MENU_DEFINITION";}' \
+	'{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
+	'{"enabled" = 0;"name" = "DOCUMENTS";}' \
+	'{"enabled" = 0;"name" = "DIRECTORIES";}' \
+	'{"enabled" = 0;"name" = "PRESENTATIONS";}' \
+	'{"enabled" = 0;"name" = "SPREADSHEETS";}' \
+	'{"enabled" = 0;"name" = "PDF";}' \
+	'{"enabled" = 0;"name" = "MESSAGES";}' \
+	'{"enabled" = 0;"name" = "CONTACT";}' \
+	'{"enabled" = 0;"name" = "EVENT_TODO";}' \
+	'{"enabled" = 0;"name" = "IMAGES";}' \
+	'{"enabled" = 0;"name" = "BOOKMARKS";}' \
+	'{"enabled" = 0;"name" = "MUSIC";}' \
+	'{"enabled" = 0;"name" = "MOVIES";}' \
+	'{"enabled" = 0;"name" = "FONTS";}' \
+	'{"enabled" = 0;"name" = "MENU_OTHER";}' \
+	'{"enabled" = 0;"name" = "SOURCE";}'
+
+# Restart Spotlight and rebuild indexes
+killall Spotlight
+sudo mdutil -E /
