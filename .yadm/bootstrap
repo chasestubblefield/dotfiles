@@ -2,6 +2,16 @@
 
 cd "$HOME"
 
+echo "Add GitHub credentials to keychain"
+if ! security find-internet-password -a chasetopher -r htps -s github.com >/dev/null 2>&1; then
+  security add-internet-password -a chasetopher -r htps -s github.com -T /Library/Developer/CommandLineTools/usr/libexec/git-core/git-credential-osxkeychain -w
+  security set-internet-password-partition-list -a chasetopher -r htps -s github.com -S apple:
+fi
+if ! security find-internet-password -a chasetopher -r htps -s gist.github.com >/dev/null 2>&1; then
+  security add-internet-password -a chasetopher -r htps -s gist.github.com -T /Library/Developer/CommandLineTools/usr/libexec/git-core/git-credential-osxkeychain -w
+  security set-internet-password-partition-list -a chasetopher -r htps -s gist.github.com -S apple:
+fi
+
 echo "Init submodules"
 yadm submodule update --init --recursive
 
