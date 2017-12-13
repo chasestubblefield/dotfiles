@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+cd "$HOME"
+
+echo "Init submodules"
+yadm submodule update --init --recursive
+
+echo "Install from global Brewfile"
+brew bundle --global
+
+echo "Set macOS defaults"
+bash .macos_defaults
+
+echo "Decrypting secret dotfiles"
+yadm decrypt
