@@ -10,6 +10,7 @@ hash pyenv 2>/dev/null && eval "$(pyenv init -)"
 hash pyenv-virtualenv-init 2>/dev/null && eval "$(pyenv virtualenv-init -)"
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 [ -d "$HOME/code/gopath" ] && export GOPATH="$HOME/code/gopath" && export PATH="$GOPATH/bin:$PATH"
+[ -d "$HOME/.bin" ] && export PATH="$HOME/.bin:$PATH"
 
 alias gst='git status --short --branch'
 alias be='bundle exec'
