@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# brew cask cache-pristine
+# brew cask cache-pristine [--force] [--all]
 # Fetches/verifies newest downloads of casks (by default only versioned casks, include all with `--all`)
 # Deletes any file in the cache that is not the newest download of an installed cache
 # By default does nothing, use `--force` to execute
