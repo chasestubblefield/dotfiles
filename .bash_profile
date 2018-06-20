@@ -27,6 +27,9 @@ export GPG_TTY=$(tty)
 # Homebrew GitHub API Token (has no permissions)
 export HOMEBREW_GITHUB_API_TOKEN=e8b8d58a71225a60d47b23947f3eb00e39e042f5
 
+# always use atom for `bundle open`
+export BUNDLER_EDITOR=atom
+
 __set_prompt() {
   local bold_cyan='\[\e[1;36m\]'
   local bold_green='\[\e[1;32m\]'
