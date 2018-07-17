@@ -17,10 +17,10 @@
 	cop = checkout -p
 	amend = commit --amend -C HEAD
 	rc = rebase --continue
-  branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(color:039)%(authordate:short) %(color:197)%(objectname:short) %(color:177)%(refname:short)%(color:reset) %(color:42)(%(committerdate:relative))%(color:reset)' --count=10
+	branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(color:039)%(authordate:short) %(color:197)%(objectname:short) %(color:177)%(refname:short)%(color:reset) %(color:42)(%(committerdate:relative))%(color:reset)' --count=10
 	l = log --oneline --decorate --graph
-  ll = log --oneline --decorate --graph origin/master HEAD
-  ls = log --pretty=format:'%C(42)%h %C(dim white)• %Creset%C(039)%ad %C(dim white)• %Creset%C(white)%s' --date=format:'%Y-%m-%d'
+	ll = log --oneline --decorate --graph origin/master HEAD
+	ls = log --pretty=format:'%C(42)%h %C(dim white)• %Creset%C(039)%ad %C(dim white)• %Creset%C(white)%s' --date=format:'%Y-%m-%d'
 	wip = !git add -A && git commit -nm wip
 	gist = !git add -A && git commit -m '' --allow-empty-message && git push
 	cut = "!f() { git checkout --no-track -b $1 $2 && git push -u origin $1; }; f"
@@ -28,6 +28,7 @@
 	ego = shortlog -sn
 	com = !git fetch && git checkout origin/master
 	rom = !git fetch && git rebase origin/master
+	f = fetch --all --prune
 [user]
 	name = Chase Stubblefield
 	email = chasestubblefield@gmail.com
