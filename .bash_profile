@@ -27,6 +27,9 @@ export GPG_TTY=$(tty)
 # Homebrew GitHub API Token (has no permissions)
 export HOMEBREW_GITHUB_API_TOKEN=e8b8d58a71225a60d47b23947f3eb00e39e042f5
 
+# vim
+export EDITOR=vim
+
 # always use atom for `bundle open`
 export BUNDLER_EDITOR=atom
 
