@@ -21,16 +21,19 @@ export CLICOLOR=1
 # disable less history
 export LESSHISTFILE=-
 
-# needing for encrypting with gpg
+# needed for gpg
 export GPG_TTY=$(tty)
 
 # Homebrew GitHub API Token (has no permissions)
 export HOMEBREW_GITHUB_API_TOKEN=e8b8d58a71225a60d47b23947f3eb00e39e042f5
 
+# brew upgrade --cleanup
+export HOMEBREW_UPGRADE_CLEANUP=1
+
 # vim
 export EDITOR=vim
 
-# always use atom for `bundle open`
+# use atom for `bundle open`
 export BUNDLER_EDITOR=atom
 
 __set_prompt() {
