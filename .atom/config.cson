@@ -19,6 +19,7 @@
     ]
     projectHome: "/Users/chase/code"
     telemetryConsent: "limited"
+    titleBar: "custom-inset"
   editor:
     fontFamily: "Inconsolata-dz"
     fontSize: 18
@@ -31,6 +32,11 @@
     ignoredNames: [
       "node_modules"
     ]
+  linter:
+    disabledProviders: [
+      "RuboCop"
+    ]
+  "linter-ui-default": {}
   "one-dark-ui":
     hideDockButtons: true
   "tree-view":
