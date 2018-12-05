@@ -32,10 +32,7 @@
     ignoredNames: [
       "node_modules"
     ]
-  linter:
-    disabledProviders: [
-      "RuboCop"
-    ]
+  linter: {}
   "linter-ui-default": {}
   "one-dark-ui":
     hideDockButtons: true

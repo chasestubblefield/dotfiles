@@ -1,7 +1,7 @@
 [advice]
 	statusHints = false
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.gitexcludes
 	editor = vim
 	pager = less -R
 [color]
@@ -29,6 +29,8 @@
 	com = !git fetch && git checkout origin/master
 	rom = !git fetch && git rebase origin/master
 	f = fetch --all --prune
+  b = branch --list --verbose --verbose
+  s = status --short --branch
 [user]
 	name = Chase Stubblefield
 	email = chasestubblefield@gmail.com
