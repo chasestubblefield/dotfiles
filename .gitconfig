@@ -9,6 +9,7 @@
 [pull]
 	rebase = true
 [alias]
+	alias = config --get-regexp ^alias
 	d = diff
 	dc = diff --cached
 	co = checkout
@@ -28,9 +29,10 @@
 	ego = shortlog -sn
 	com = !git fetch && git checkout origin/master
 	rom = !git fetch && git rebase origin/master
-	f = fetch --all --prune
-  b = branch --list --verbose --verbose
-  s = status --short --branch
+	f = fetch --all --prune --tags
+	b = branch --list --verbose --verbose
+	s = status --short --branch
+	sx = status --short --branch --ignored
 [user]
 	name = Chase Stubblefield
 	email = chasestubblefield@gmail.com

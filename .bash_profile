@@ -6,6 +6,7 @@ shopt -s extglob
 [ -d /usr/local/etc/bash_completion.d ] && for f in /usr/local/etc/bash_completion.d/*; do source "$f"; done
 
 hash rbenv 2>/dev/null && eval "$(rbenv init -)"
+hash nodenv 2>/dev/null && eval "$(nodenv init -)"
 hash pyenv 2>/dev/null && eval "$(pyenv init -)"
 hash pyenv-virtualenv-init 2>/dev/null && eval "$(pyenv virtualenv-init -)"
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
@@ -26,9 +27,6 @@ export GPG_TTY=$(tty)
 
 # Homebrew GitHub API Token (has no permissions)
 export HOMEBREW_GITHUB_API_TOKEN=e8b8d58a71225a60d47b23947f3eb00e39e042f5
-
-# brew upgrade --cleanup
-export HOMEBREW_UPGRADE_CLEANUP=1
 
 # vim
 export EDITOR=vim
