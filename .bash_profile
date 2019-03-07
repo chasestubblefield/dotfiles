@@ -3,8 +3,6 @@
 
 shopt -s extglob
 
-[ -d /usr/local/etc/bash_completion.d ] && for f in /usr/local/etc/bash_completion.d/*; do source "$f"; done
-
 hash rbenv 2>/dev/null && eval "$(rbenv init -)"
 hash nodenv 2>/dev/null && eval "$(nodenv init -)"
 hash pyenv 2>/dev/null && eval "$(pyenv init -)"
@@ -13,7 +11,6 @@ hash pyenv-virtualenv-init 2>/dev/null && eval "$(pyenv virtualenv-init -)"
 [ -d "$HOME/code/gopath" ] && export GOPATH="$HOME/code/gopath" && export PATH="$GOPATH/bin:$PATH"
 [ -d "$HOME/.bin" ] && export PATH="$HOME/.bin:$PATH"
 
-alias gst='git status --short --branch'
 alias be='bundle exec'
 
 # enable ls colors
@@ -25,15 +22,11 @@ export LESSHISTFILE=-
 # needed for gpg
 export GPG_TTY=$(tty)
 
-# Homebrew GitHub API Token (has no permissions)
-export HOMEBREW_GITHUB_API_TOKEN=e8b8d58a71225a60d47b23947f3eb00e39e042f5
-
-# vim
+# editors
 export EDITOR=vim
-
-# use atom for `bundle open`
 export BUNDLER_EDITOR=atom
 
+# prompt
 __set_prompt() {
   local bold_cyan='\[\e[1;36m\]'
   local bold_green='\[\e[1;32m\]'
@@ -53,3 +46,19 @@ __set_prompt() {
 }
 __set_prompt
 unset __set_prompt
+
+# Homebrew
+if hash brew &>/dev/null; then
+  # shell completion
+  BREW_PREFIX="$(brew --prefix)"
+  for COMPLETION in "$BREW_PREFIX/etc/bash_completion.d/*"; do
+    [[ -f "$COMPLETION" ]] && source "$COMPLETION"
+  done
+  if [[ -f "$BREW_PREFIX/etc/profile.d/bash_completion.sh" ]]; then
+    source "$BREW_PREFIX/etc/profile.d/bash_completion.sh"
+  fi
+  unset BREW_PREFIX
+
+  # GitHub API Token
+  export HOMEBREW_GITHUB_API_TOKEN=e8b8d58a71225a60d47b23947f3eb00e39e042f5
+fi
