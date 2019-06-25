@@ -3,10 +3,10 @@
 
 shopt -s extglob
 
-hash rbenv 2>/dev/null && eval "$(rbenv init -)"
-hash nodenv 2>/dev/null && eval "$(nodenv init -)"
-hash pyenv 2>/dev/null && eval "$(pyenv init -)"
-hash pyenv-virtualenv-init 2>/dev/null && eval "$(pyenv virtualenv-init -)"
+hash rbenv 2>/dev/null && [ -d "$HOME/.rbenv" ] && eval "$(rbenv init -)"
+hash nodenv 2>/dev/null && [ -d "$HOME/.nodenv" ] && eval "$(nodenv init -)"
+hash pyenv 2>/dev/null && [ -d "$HOME/.pyenv" ] && eval "$(pyenv init -)"
+hash pyenv-virtualenv-init 2>/dev/null && [ -d "$HOME/.pyenv" ] && eval "$(pyenv virtualenv-init -)"
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 [ -d "$HOME/code/gopath" ] && export GOPATH="$HOME/code/gopath" && export PATH="$GOPATH/bin:$PATH"
 [ -d "$HOME/.bin" ] && export PATH="$HOME/.bin:$PATH"
@@ -25,6 +25,22 @@ export GPG_TTY=$(tty)
 # editors
 export EDITOR=vim
 export BUNDLER_EDITOR=atom
+
+# Homebrew
+if hash brew &>/dev/null; then
+  # shell completion
+  BREW_PREFIX="$(brew --prefix)"
+  for COMPLETION in "$BREW_PREFIX"/etc/bash_completion.d/*; do
+    [[ -f "$COMPLETION" ]] && source "$COMPLETION"
+  done
+  if [[ -f "$BREW_PREFIX/etc/profile.d/bash_completion.sh" ]]; then
+    source "$BREW_PREFIX/etc/profile.d/bash_completion.sh"
+  fi
+  unset BREW_PREFIX
+
+  # GitHub API Token
+  export HOMEBREW_GITHUB_API_TOKEN=e8b8d58a71225a60d47b23947f3eb00e39e042f5
+fi
 
 # prompt
 __set_prompt() {
@@ -46,19 +62,3 @@ __set_prompt() {
 }
 __set_prompt
 unset __set_prompt
-
-# Homebrew
-if hash brew &>/dev/null; then
-  # shell completion
-  BREW_PREFIX="$(brew --prefix)"
-  for COMPLETION in "$BREW_PREFIX/etc/bash_completion.d/*"; do
-    [[ -f "$COMPLETION" ]] && source "$COMPLETION"
-  done
-  if [[ -f "$BREW_PREFIX/etc/profile.d/bash_completion.sh" ]]; then
-    source "$BREW_PREFIX/etc/profile.d/bash_completion.sh"
-  fi
-  unset BREW_PREFIX
-
-  # GitHub API Token
-  export HOMEBREW_GITHUB_API_TOKEN=e8b8d58a71225a60d47b23947f3eb00e39e042f5
-fi
