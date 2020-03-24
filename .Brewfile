@@ -50,7 +50,7 @@ cask "dolphin"
 cask "elgato-game-capture-hd"
 cask "font-anonymous-pro"
 cask "font-fira-mono"
-cask "font-inconsolata-dz"
+cask "font-inconsolata"
 cask "font-meslo-lg"
 cask "font-source-code-pro"
 cask "font-terminus"
@@ -70,6 +70,7 @@ cask "transmission"
 cask "visual-studio-code"
 cask "vlc"
 cask "xbox360-controller-driver-unofficial"
+cask "zoomus"
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
