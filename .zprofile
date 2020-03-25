@@ -1,0 +1,5 @@
+type rbenv &>/dev/null && [[ -d "$HOME/.rbenv" ]] && eval "$(rbenv init -)"
+type nodenv &>/dev/null && [[ -d "$HOME/.nodenv" ]] && eval "$(nodenv init -)"
+[[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
+[[ -d "$HOME/code/gopath" ]] && export GOPATH="$HOME/code/go" && export PATH="$GOPATH/bin:$PATH"
+[[ -d "$HOME/.bin" ]] && export PATH="$HOME/.bin:$PATH"
