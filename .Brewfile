@@ -19,12 +19,11 @@ brew "imagemagick"
 brew "inetutils"
 brew "jq"
 brew "mas"
-brew "mysql@5.7", restart_service: true, link: true
 brew "nethack"
 brew "nodenv"
 brew "postgresql"
 brew "rbenv"
-brew "redis", restart_service: true
+brew "redis"
 brew "rustup-init"
 brew "streamlink"
 brew "the_silver_searcher"
