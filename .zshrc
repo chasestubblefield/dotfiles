@@ -25,5 +25,5 @@ if [[ -f '/usr/local/etc/bash_completion.d/git-prompt.sh' ]]; then
     GIT_PS1_SHOWUPSTREAM=auto
     GIT_PS1_DESCRIBE_STYLE=branch
     GIT_PS1_SHOWCOLORHINTS=1
-    precmd () { __git_ps1 '%B%F{cyan}%~%f%b ' '%B%F{green}%(!.#.$)%f%b ' '[%s] ' }
+    precmd () { __git_ps1 '%B%F{cyan}%~%f%b ' '%B%(?.%F{green}.%F{red})%(!.#.$)%f%b ' '[%s] ' }
 fi
