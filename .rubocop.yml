@@ -3,12 +3,3 @@ AllCops:
 
 Style/Documentation:
   Enabled: false
-
-Metrics/MethodLength:
-  Enabled: false
-
-Metrics/AbcSize:
-  Enabled: false
-
-Naming/MethodParameterName:
-  Enabled: false
