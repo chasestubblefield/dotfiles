@@ -28,7 +28,7 @@ function fish_prompt
     echo -n (fish_git_prompt)
 
     # exit status
-    echo -n (__fish_print_pipestatus " [" "]" "|" (set_color $fish_color_status) (set_color --bold $fish_color_status) $last_pipestatus)
+    echo -n (__fish_print_pipestatus " [" "]" "|" (set_color --bold $fish_color_status) (set_color --bold $fish_color_status) $last_pipestatus)
 
     # prompt char
     set_color brgreen

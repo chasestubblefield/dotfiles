@@ -1,6 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export BUNDLER_EDITOR:code
+SETUVAR --export EDITOR:vim
 SETUVAR VIRTUAL_ENV_DISABLE_PROMPT:1
 SETUVAR __fish_git_prompt_showcolorhints:\x1d
 SETUVAR __fish_git_prompt_showdirtystate:true
