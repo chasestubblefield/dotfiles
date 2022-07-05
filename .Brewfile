@@ -71,7 +71,6 @@ cask "the-unarchiver"
 cask "transmission"
 cask "visual-studio-code"
 cask "vlc"
-cask "zoom"
 mas "Apple Configurator 2", id: 1037126344
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
