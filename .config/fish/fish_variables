@@ -3,6 +3,9 @@
 SETUVAR --export EDITOR:vim
 SETUVAR VIRTUAL_ENV_DISABLE_PROMPT:1
 SETUVAR --export VISUAL:code\x20\x2d\x2dwait\x20\x2d\x2dnew\x2dwindow
+SETUVAR --export XDG_CONFIG_HOME:/Users/chase/\x2econfig
+SETUVAR --export XDG_DATA_HOME:/Users/chase/\x2elocal/share
+SETUVAR --export XDG_STATE_HOME:/Users/chase/\x2elocal/state
 SETUVAR __fish_git_prompt_showcolorhints:\x1d
 SETUVAR __fish_git_prompt_showdirtystate:true
 SETUVAR __fish_git_prompt_showuntrackedfiles:true
@@ -31,7 +34,7 @@ SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrbl
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
-SETUVAR fish_features:stderr\x2dnocaret\x1eqmark\x2dnoglob
+SETUVAR fish_features:qmark\x2dnoglob
 SETUVAR fish_greeting:\x1d
 SETUVAR fish_key_bindings:fish_default_key_bindings
 SETUVAR fish_pager_color_completion:normal
