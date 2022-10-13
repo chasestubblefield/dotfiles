@@ -1,7 +1,6 @@
 [advice]
 	statusHints = false
 [core]
-	excludesfile = ~/.gitexcludes
 	editor = vim
 	pager = less -R
 [color]
