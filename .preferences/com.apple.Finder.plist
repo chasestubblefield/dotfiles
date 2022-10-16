@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NewWindowTarget</key>
+	<string>PfHm</string>
+	<key>NewWindowTargetPath</key>
+	<string>file:///Users/chase/</string>
+	<key>ShowExternalHardDrivesOnDesktop</key>
+	<false/>
+	<key>ShowHardDrivesOnDesktop</key>
+	<false/>
+	<key>ShowRecentTags</key>
+	<true/>
+	<key>ShowRemovableMediaOnDesktop</key>
+	<false/>
+	<key>ShowSidebar</key>
+	<true/>
+	<key>ShowStatusBar</key>
+	<true/>
+</dict>
+</plist>
