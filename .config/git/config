@@ -7,6 +7,10 @@
 	ui = true
 [pull]
 	rebase = true
+[fetch]
+	prune = true
+[init]
+	defaultBranch = master
 [alias]
 	alias = config --get-regexp ^alias
 	d = diff
@@ -26,19 +30,20 @@
 	ego = shortlog -sn
 	com = !git fetch && git checkout origin/master
 	rom = !git fetch && git rebase origin/master
-	f = fetch --all --prune --tags
+	f = fetch
+	fa = fetch --all
+	ft = fetch --tags
+	fat = fetch --all --tags
 	b = branch --list --verbose --verbose
 	s = status --short --branch
 	sx = status --short --branch --ignored
-[user]
-	name = Chase Stubblefield
-	email = chasestubblefield@gmail.com
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[init]
-	defaultBranch = master
+[user]
+	name = Chase Stubblefield
+	email = chasestubblefield@gmail.com
 [includeIf "gitdir:~/dev/bmd/"]
 	path = ~/dev/bmd/.gitconfig.inc
