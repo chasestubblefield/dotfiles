@@ -11,7 +11,7 @@
 	<key>ShowHardDrivesOnDesktop</key>
 	<false/>
 	<key>ShowRecentTags</key>
-	<true/>
+	<false/>
 	<key>ShowRemovableMediaOnDesktop</key>
 	<false/>
 	<key>ShowSidebar</key>
