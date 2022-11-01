@@ -1,10 +1,5 @@
-[advice]
-	statusHints = false
 [core]
 	editor = vim
-	pager = less -R
-[color]
-	ui = true
 [pull]
 	rebase = true
 [fetch]
@@ -34,7 +29,7 @@
 	fa = fetch --all
 	ft = fetch --tags
 	fat = fetch --all --tags
-	b = branch --list --verbose --verbose
+	b = branch --list --all --verbose --verbose
 	s = status --short --branch
 	sx = status --short --branch --ignored
 [filter "lfs"]
