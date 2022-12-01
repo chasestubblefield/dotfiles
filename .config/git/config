@@ -32,6 +32,7 @@
 	b = branch --list --all --verbose --verbose
 	s = status --short --branch
 	sx = status --short --branch --ignored
+	adn = add -N
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
