@@ -58,7 +58,6 @@ cask "slack"
 cask "spotify"
 cask "the-unarchiver"
 cask "transmission"
-cask "virtualbox"
 cask "visual-studio-code"
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
