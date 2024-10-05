@@ -2,11 +2,10 @@
 # VERSION: 3.0
 SETUVAR --export EDITOR:vim
 SETUVAR --export PAGER:less\x20\x2dRF
-SETUVAR --export VISUAL:code\x20\x2d\x2dwait\x20\x2d\x2dnew\x2dwindow
 SETUVAR --export XDG_CONFIG_HOME:/Users/chase/\x2econfig
 SETUVAR --export XDG_DATA_HOME:/Users/chase/\x2elocal/share
 SETUVAR --export XDG_STATE_HOME:/Users/chase/\x2elocal/state
-SETUVAR __fish_git_prompt_showcolorhints:\x1d
+SETUVAR __fish_git_prompt_showcolorhints:true
 SETUVAR __fish_git_prompt_showdirtystate:true
 SETUVAR __fish_git_prompt_showuntrackedfiles:true
 SETUVAR __fish_git_prompt_showupstream:auto

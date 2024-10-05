@@ -43,3 +43,5 @@
 	email = chasestubblefield@gmail.com
 [includeIf "gitdir:~/dev/bmd/"]
 	path = ~/dev/bmd/.gitconfig.inc
+[clean]
+	requireForce = true
