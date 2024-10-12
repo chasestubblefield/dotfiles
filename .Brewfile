@@ -53,7 +53,6 @@ brew "open-mpi"
 brew "osslsigncode"
 brew "pnpm"
 brew "poppler"
-brew "postgresql@14", restart_service: true
 brew "ruby-build"
 brew "rbenv"
 brew "redis"
